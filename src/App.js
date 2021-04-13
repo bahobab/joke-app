@@ -4,10 +4,10 @@ import './App.css';
 
 function App() {
   const initialJoke = {
-    "id": 150,
+    "id": 0,
     "type": "general",
-    "setup": "Is there a hole in your shoe?",
-    "punchline": "No… Then how’d you get your foot in it?"
+    "setup": "LOADING YOUR JOKE",
+    "punchline": "##Initialization##"
   };
 
   const [joke, setJoke] = useState(initialJoke);
@@ -40,8 +40,8 @@ function App() {
         </nav>
         <main>
           <p><h4>{ joke.setup }</h4></p>
-          <button onClick={handlePunchlineClick}>Show Punchline</button>
-          <p>{ joke.punchline }</p>
+          <button onClick={handlePunchlineClick}>{!showPuncline ? 'Show Punchline' : 'Hide Punchline'}</button>
+          {showPuncline && <p>{joke.punchline}</p>}
         </main>
       </header>
     </div>
