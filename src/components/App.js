@@ -15,6 +15,7 @@ function App() {
 
   const [joke, setJoke] = useState(initialJoke);
   const [showPuncline, setShowPunchline] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getJoke();
@@ -22,21 +23,30 @@ function App() {
 
   async function getJoke() {
     // call fetchNewJoke
+    try {
     const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
     const json = await response.json();
   
     console.log(json);
-
+    
     setJoke(json);
-
+      // reset hide punchline
+    setShowPunchline(false);
+  } catch (error) {
+    setJoke({ setup: 'THERE WAS AN ERROR LOADING YOUR JOKE' });
+    setError(true);
     // reset hide punchline
     setShowPunchline(false);
+    }
+    
+
   }
   
   return (
     <div className="App">
-      <Header joke={joke} getJoke={getJoke} setJoke={ setJoke }/>
-      <Joke joke={joke} showPuncline={showPuncline} setShowPunchline={ setShowPunchline }/>
+      <Header joke={joke} getJoke={getJoke} setJoke={setJoke} />
+      <hr className="separator" />
+      <Joke joke={joke} showPuncline={showPuncline} setShowPunchline={setShowPunchline} error={error }/>
     </div>
   );
 }

@@ -10,6 +10,36 @@
 
 .nav-elements {
   width: 100%;
+  margin: 3rem 0;
+  padding-top: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-get-joke {
+  color: white;
+  font-size: 1rem;
+  width: 220px;
+  border-radius: 50px;
+  height: 65px;
+  border: none;
+  cursor: pointer;
+  background-color: #2ECC71;
+}
+
+.joke-docs {
+  font-size: 1rem;
+  color: #6495ED;
+}
+
+@media screen and (max-width: 568px) {
+  .nav-elements {
+    flex-direction: column;
+    margin: 1.5rem;
+    padding: 0;
+  }
+  .joke-docs {
+    margin-top: 1rem;
+  }
 }
