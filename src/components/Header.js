@@ -9,8 +9,19 @@ const Header = (props) => {
   return (
     <header className="App-header" >
       <nav className="nav-elements">
-          <button onClick={handleNewJokeClick} className="btn-get-joke" >Get A New Random Joke</button>
-        <a className="joke-docs" href="https://github.com/15Dkatz/official_joke_api" target="_blank" rel="noreferrer">
+        <button
+          onClick={handleNewJokeClick}
+          className="btn-get-joke"
+          aria-describedby="Get A New Random Joke"
+        >
+          Get A New Random Joke
+        </button>
+        <a
+          className="joke-docs"
+          href="https://github.com/15Dkatz/official_joke_api"
+          target="_blank" rel="noreferrer"
+          aria-describedby="Navigate to the API Docs"
+        >
           View API Docs
         </a>
       </nav>

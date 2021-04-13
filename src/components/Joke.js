@@ -14,7 +14,12 @@ const Joke = (props) => {
         {props.joke.setup}
       </p>
       {
-        !props.error && <button className="btn-joke-punchline" onClick={handlePunchlineClick}>
+        !props.error &&
+        <button
+          className="btn-joke-punchline"
+          onClick={handlePunchlineClick}
+          aria-describedby={`${!props.showPuncline ? 'Show Punchline' : 'Hide Punchline'}`}
+        >
           {!props.showPuncline ? 'Show Punchline' : 'Hide Punchline'}
         </button>
       }

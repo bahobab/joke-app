@@ -27,11 +27,24 @@
   cursor: pointer;
   outline-style: none;
   background-color: #2ECC71;
+  transition: all .3s;
+}
+
+.btn-get-joke:hover {
+  height: 70px;
+  width: 225px;
+  color: black;
 }
 
 .joke-docs {
   font-size: 1rem;
   color: #6495ED;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.joke-docs:hover {
+  color: red;
 }
 
 @media screen and (max-width: 568px) {
