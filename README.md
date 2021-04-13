@@ -12,3 +12,4 @@ The project make use of React Hooks (useState and useEffect) to manage state.
 In the project directory, you can run:
 ### `npm install`
 
+### `npm start`
