@@ -25,6 +25,7 @@
   height: 65px;
   border: none;
   cursor: pointer;
+  outline-style: none;
   background-color: #2ECC71;
 }
 

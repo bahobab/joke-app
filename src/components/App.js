@@ -27,7 +27,7 @@ function App() {
     const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
     const json = await response.json();
   
-    console.log(json);
+    // console.log(json);
     
     setJoke(json);
       // reset hide punchline

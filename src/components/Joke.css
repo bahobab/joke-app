@@ -25,12 +25,19 @@
   height: 65px;
   border: none;
   cursor: pointer;
+  outline-style: none;
   background-color: #6495ED;
 }
 
 .joke-punchline {
   align-self: flex-end;
   margin-top: 5rem;
+  font-size: medium;
+}
+
+.left-quote, .right-quote {
+  color: rgba(0, 0, 0, 0.3);
+  
 }
 
 .error {
