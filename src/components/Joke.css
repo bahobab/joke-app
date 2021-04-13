@@ -1,0 +1,14 @@
+.joke-main {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  /* justify-content: center; */
+}
+
+.joke-setup {
+  align-self: flex-start !important; 
+}
+
+.joke-punchline {
+  align-self: flex-end !important;
+}

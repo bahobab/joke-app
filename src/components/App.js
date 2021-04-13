@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import Header from './Header';
+import Joke from './Joke';
+
 import './App.css';
 
 function App() {
@@ -29,29 +32,11 @@ function App() {
     // reset hide punchline
     setShowPunchline(false);
   }
-
-  async function handleNewJokeClick(e) {
-    getJoke();
-  }
-
-  function handlePunchlineClick(e) {
-    // toggle show hid punchline
-    setShowPunchline(!showPuncline);
-  }
-
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <nav>
-          <button onClick={handleNewJokeClick}>Get A New Random Joke</button>
-          <a href="https://official-joke-api.appspot.com/">View Api Docs</a>
-        </nav>
-        <main>
-          <p><h4>{ joke.setup }</h4></p>
-          <button onClick={handlePunchlineClick}>{!showPuncline ? 'Show Punchline' : 'Hide Punchline'}</button>
-          {showPuncline && <p>{joke.punchline}</p>}
-        </main>
-      </header>
+      <Header joke={joke} getJoke={getJoke} setJoke={ setJoke }/>
+      <Joke joke={joke} showPuncline={showPuncline} setShowPunchline={ setShowPunchline }/>
     </div>
   );
 }
