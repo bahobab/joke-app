@@ -33,7 +33,7 @@ function App() {
       // reset hide punchline
     setShowPunchline(false);
   } catch (error) {
-    setJoke({ setup: 'THERE WAS AN ERROR LOADING YOUR JOKE' });
+    setJoke({ setup: 'THERE WAS AN ERROR LOADING YOUR JOKE.' });
     setError(true);
     // reset hide punchline
     setShowPunchline(false);
@@ -46,7 +46,12 @@ function App() {
     <div className="App">
       <Header joke={joke} getJoke={getJoke} setJoke={setJoke} />
       <hr className="separator" />
-      <Joke joke={joke} showPuncline={showPuncline} setShowPunchline={setShowPunchline} error={error }/>
+      <Joke
+        joke={joke}
+        showPuncline={showPuncline}
+        setShowPunchline={setShowPunchline}
+        error={error}
+      />
     </div>
   );
 }
