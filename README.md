@@ -7,7 +7,7 @@ The project make use of React Hooks (useState and useEffect) to manage state.
 
 ## Install
 
-### Donwload the project or clone to a local directory
+### `Donwload the project or clone to a local directory`
 
 In the project directory, you can run:
 ### `npm install`
