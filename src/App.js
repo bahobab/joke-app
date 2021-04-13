@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.css';
 
@@ -13,7 +13,11 @@ function App() {
   const [joke, setJoke] = useState(initialJoke);
   const [showPuncline, setShowPunchline] = useState(false);
 
-  async function handleNewJokeClick(e) {
+  useEffect(() => {
+    getJoke();
+  }, []);
+
+  async function getJoke() {
     // call fetchNewJoke
     const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
     const json = await response.json();
@@ -24,6 +28,10 @@ function App() {
 
     // reset hide punchline
     setShowPunchline(false);
+  }
+
+  async function handleNewJokeClick(e) {
+    getJoke();
   }
 
   function handlePunchlineClick(e) {
