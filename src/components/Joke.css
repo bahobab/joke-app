@@ -10,12 +10,30 @@
 .joke-setup {
   align-self: flex-start; 
   margin-bottom: 5rem;
+  position: relative;
 }
 
-/* .pl-button-wrapper {
-  margin: 3rem 0;
+.joke-setup-text {
+  display: inline-block;
+  height: 30px;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 5px;
+  font-size: 1.3rem;
+}
 
-} */
+.joke-setup:after {
+  content: ' ';
+  background-image: linear-gradient(to left, rgba(255, 255,255, 0.85), rgba(255,255,255, 0.85)), url("../img/quote-left.svg");
+  background-size: 35px 35px;
+  /* background-blend-mode: lighten; */
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
 
 .btn-joke-punchline {
   color: white;
@@ -41,7 +59,32 @@
   align-self: flex-end;
   margin-top: 5rem;
   font-size: medium;
+  position: relative;
 }
+
+.joke-punchline-text {
+  display: inline-block;
+  height: 60px;
+  text-align: right;
+  vertical-align: middle;
+  margin-right: 25px;
+  font-size: 1.3rem;
+}
+
+.joke-punchline:before {
+  content: ' ';
+  background-image: linear-gradient(to left, rgba(255, 255,255, 0.85), rgba(255,255,255, 0.85)), url("../img/quote-right.svg");
+  background-size: 35px 35px;
+  background-position: top;
+  /* background-blend-mode: lighten; */
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 25px;
+}
+
 
 .left-quote, .right-quote {
   color: rgba(0, 0, 0, 0.3);
@@ -55,12 +98,19 @@
 
 @media screen and (max-width: 568px) {
   .joke-setup {
-    align-self: center; 
+    /* align-self: center;  */
     margin-bottom: 2rem;
   }
 
+  .joke-setup-text {
+  /* text-align: left; */
+  margin-left: 20px;
+  margin-top: 5px;
+  /* font-size: 1.3rem; */
+}
+
   .joke-punchline {
-    align-self: center;
+    /* align-self: center; */
     margin-top: 2rem;
   }
 }
