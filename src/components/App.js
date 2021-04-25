@@ -7,18 +7,11 @@ import Loading from './Loading';
 import './App.css';
 
 function App() {
-  const loading = {
-    "id": 0,
-    "type": "general",
-    "setup": "LOADING YOUR JOKE...",
-    "punchline": "##Initialization##"
-  };
-
-  const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
   const [joke, setJoke] = useState({});
   const [showPuncline, setShowPunchline] = useState(false);
   const [error, setError] = useState(false);
-  const [offLine, setOffLine] = useState(false);
+  // const [offLine, setOffLine] = useState(false);
 
   useEffect(() => {
     getJoke();
@@ -32,7 +25,6 @@ function App() {
     const response = await fetch('https://official-joke-api.appspot.com/jokes/random');
     const json = await response.json();
   
-    // console.log(json);
       setIsLoading(false);
     setJoke(json);
       // reset hide punchline
@@ -40,9 +32,9 @@ function App() {
     } catch (error) {
       setIsLoading(false);
     setJoke({ setup: 'THERE WAS AN ERROR LOADING YOUR JOKE.' });
-    setError(true);
+      setError(true);
     // reset hide punchline
-    setShowPunchline(false);
+      setShowPunchline(false);
     }
     
 

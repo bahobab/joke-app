@@ -7,7 +7,6 @@ const Joke = (props) => {
     props.setShowPunchline(!props.showPuncline);
   }
 
-  // left-quote fas fa-quote-left
   return (
     <main className="joke-main">
       
@@ -19,7 +18,6 @@ const Joke = (props) => {
           : 
       
       <p className={`${props.error ? 'error' : ''} joke-setup`}>
-        {/* <i className={`${props.error ? 'error' : ''} `}></i> */}
         <span className="joke-setup-text">{props.joke.setup}</span>
       </p>
       }
@@ -38,7 +36,6 @@ const Joke = (props) => {
       {
         props.showPuncline && <p className="joke-punchline">
           <span className="joke-punchline-text">{props.joke.punchline}</span>
-          {/* <i className="right-quote fas fa-quote-right"></i> */}
         </p>
         }
     </main>
