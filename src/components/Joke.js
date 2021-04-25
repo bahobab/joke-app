@@ -9,24 +9,33 @@ const Joke = (props) => {
 
   return (
     <main className="joke-main">
-      <p className={`${props.error ? 'error' : ''} joke-setup`}>
-        <i className={`${props.error ? 'error' : ''} left-quote fas fa-quote-left`}></i>
-        {props.joke.setup}
+      
+      {
+        props.error
+          ? <p className={`${props.error ? 'error' : ''}`}>
+        <span className="joke-setup-text">{props.joke.setup}</span>
       </p>
+          : 
+      
+      <p className={`${props.error ? 'error' : ''} joke-setup`}>
+        <span className="joke-setup-text">{props.joke.setup}</span>
+      </p>
+      }
       {
         !props.error &&
+        <div style={{height: '60px'}}>
         <button
           className="btn-joke-punchline"
           onClick={handlePunchlineClick}
           aria-describedby={`${!props.showPuncline ? 'Show Punchline' : 'Hide Punchline'}`}
         >
           {!props.showPuncline ? 'Show Punchline' : 'Hide Punchline'}
-        </button>
+          </button>
+          </div>
       }
       {
         props.showPuncline && <p className="joke-punchline">
-          {props.joke.punchline}
-          <i className="right-quote fas fa-quote-right"></i>
+          <span className="joke-punchline-text">{props.joke.punchline}</span>
         </p>
         }
     </main>
