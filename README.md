@@ -13,3 +13,5 @@ In the project directory, you can run:
 ### `npm install`
 
 ### `npm start`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f35ab5ce-e6df-4730-8419-decf9d0fa80f/deploy-status)](https://app.netlify.com/sites/jokefy/deploys)
